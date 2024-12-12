@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdngjgrc70uqy"]
+
+[ext_resource type="PackedScene" uid="uid://bvctfydhv87g5" path="res://Scenes/GUI/audio_slider_settings.tscn" id="1_0wxpi"]
+[ext_resource type="PackedScene" uid="uid://dtap4covg6akv" path="res://Scenes/GUI/hotkey_rebind_button.tscn" id="1_mxuvp"]
+[ext_resource type="PackedScene" uid="uid://c0orugvgweoh6" path="res://Scenes/GUI/window_mode_button.tscn" id="1_x0sb0"]
+[ext_resource type="PackedScene" uid="uid://b4f1qumq86jtu" path="res://Scenes/GUI/resolution_button.tscn" id="2_0ldby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7lbe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53ax7"]
+
+[node name="Settings_tab_container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Звук" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Звук"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Звук/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Звук/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_slider_settings" parent="TabContainer/Звук/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_0wxpi")]
+layout_mode = 2
+
+[node name="Audio_slider_settings2" parent="TabContainer/Звук/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_0wxpi")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Audio_slider_settings3" parent="TabContainer/Звук/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_0wxpi")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Графика" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Графика"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Графика/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Графика/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="window_mode_button" parent="TabContainer/Графика/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_x0sb0")]
+layout_mode = 2
+
+[node name="Resolution_button" parent="TabContainer/Графика/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_0ldby")]
+layout_mode = 2
+
+[node name="Управление" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Управление"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Управление/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Управление/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_e7lbe")
+
+[node name="Hotkey_rebind_button" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+action_name = "move_up"
+
+[node name="Hotkey_rebind_button2" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+
+[node name="Hotkey_rebind_button3" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+action_name = "move_down"
+
+[node name="Hotkey_rebind_button4" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+action_name = "move_right"
+
+[node name="Hotkey_rebind_button5" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+action_name = "sprint"
+
+[node name="Hotkey_rebind_button6" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="Hotkey_rebind_button7" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_mxuvp")]
+layout_mode = 2
+action_name = "pause"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Управление/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_53ax7")
