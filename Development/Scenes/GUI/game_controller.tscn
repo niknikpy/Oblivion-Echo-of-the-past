@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://chlyyfgk7mr4g"]
+
+[sub_resource type="GDScript" id="GDScript_scbda"]
+script/source = "class_name GameController
+extends Node
+
+func _ready():
+	Global.game_controller = self
+"
+
+[node name="GameController" type="Node"]
+script = SubResource("GDScript_scbda")
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

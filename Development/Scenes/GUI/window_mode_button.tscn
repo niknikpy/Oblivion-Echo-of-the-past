@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0orugvgweoh6"]
+
+[ext_resource type="PackedScene" uid="uid://bg1yg8usttbdm" path="res://Scenes/GUI/graphics_button.tscn" id="1_24vdh"]
+[ext_resource type="Script" path="res://Scripts/GUI/window_mode_button.gd" id="2_omjbx"]
+
+[node name="window_mode_button" instance=ExtResource("1_24vdh")]
+script = ExtResource("2_omjbx")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Режим экрана"

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhof2n8nr3yrl"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/Puzzles/puzzle_station_main.gd" id="1_5500l"]
+[ext_resource type="Texture2D" uid="uid://dj8ex85r337wd" path="res://Images/Tilesets/Common_tilesets/TilesetDungeon.png" id="1_nnh87"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_egd81"]
+radius = 2.0
+height = 6.0
+
+[sub_resource type="GDScript" id="GDScript_u5csd"]
+script/source = "extends Area2D
+
+func _ready():
+	body_entered.connect(_player_entered)
+	
+func _player_entered(body):
+	if Input.is_action_pressed(\"interact\") and !Global.puzzle_solved:
+		GameStateService.on_scene_transitioning()
+		get_tree().change_scene_to_file(\"res://Scenes/GameObjects/Puzzles/sliding_puzzle.tscn\")
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pcy1p"]
+radius = 7.07107
+
+[node name="Puzzle_station" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_5500l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nnh87")
+hframes = 12
+vframes = 4
+frame = 39
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_egd81")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+script = SubResource("GDScript_u5csd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_pcy1p")

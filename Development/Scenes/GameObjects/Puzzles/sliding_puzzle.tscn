@@ -1,0 +1,126 @@
+[gd_scene load_steps=20 format=3 uid="uid://bgbsoqluielnm"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/Puzzles/sliding_puzzle.gd" id="1_b0k68"]
+[ext_resource type="Texture2D" uid="uid://c6jgrxqsdo5bc" path="res://Images/GUI/Backgrounds/puzzle_background.PNG" id="1_wdw5n"]
+[ext_resource type="Texture2D" uid="uid://budvq6yki0ciu" path="res://Images/GUI/GUI_elements/puzzle_image_1.jpg" id="2_auv4r"]
+[ext_resource type="Texture2D" uid="uid://nkd4nrwd82o2" path="res://Images/GUI/GUI_elements/puzzle_image_2.jpg" id="3_osdf7"]
+[ext_resource type="Texture2D" uid="uid://bjibrap22m3mr" path="res://Images/GUI/GUI_elements/puzzle_image_3.jpg" id="4_1fn66"]
+[ext_resource type="Texture2D" uid="uid://5kt571tsn4vb" path="res://Images/GUI/GUI_elements/puzzle_image_4.jpg" id="5_0fiou"]
+[ext_resource type="Texture2D" uid="uid://b2bxujrw2lge4" path="res://Images/GUI/GUI_elements/puzzle_image_5.jpg" id="6_eh1lh"]
+[ext_resource type="Texture2D" uid="uid://cwn8k8ka55o17" path="res://Images/GUI/GUI_elements/puzzle_image_6.jpg" id="7_xprwx"]
+[ext_resource type="Texture2D" uid="uid://bsydgb5y5ndis" path="res://Images/GUI/GUI_elements/puzzle_image_7.jpg" id="8_4g8ka"]
+[ext_resource type="Texture2D" uid="uid://dm7eo8n2myevd" path="res://Images/GUI/GUI_elements/puzzle_image_8.jpg" id="9_bxqgy"]
+[ext_resource type="Texture2D" uid="uid://bnvc45fniu6hd" path="res://Images/GUI/GUI_elements/puzzle_image_9.jpg" id="10_q6m8d"]
+[ext_resource type="Texture2D" uid="uid://dsy0xm0wcg7fa" path="res://Images/GUI/GUI_elements/puzzle_image_10.jpg" id="11_wwrbl"]
+[ext_resource type="Texture2D" uid="uid://dci6kcmhhjlak" path="res://Images/GUI/GUI_elements/puzzle_image_11.jpg" id="12_12v4y"]
+[ext_resource type="Texture2D" uid="uid://sjipclygpj6u" path="res://Images/GUI/GUI_elements/puzzle_image_12.jpg" id="13_roj80"]
+[ext_resource type="Texture2D" uid="uid://bk4hqyjtbxns5" path="res://Images/GUI/GUI_elements/puzzle_image_13.jpg" id="14_ov1hf"]
+[ext_resource type="Texture2D" uid="uid://blk2k812ej4fw" path="res://Images/GUI/GUI_elements/puzzle_image_14.jpg" id="15_ugc0g"]
+[ext_resource type="Texture2D" uid="uid://d2h8q7y4lvehu" path="res://Images/GUI/GUI_elements/puzzle_image_15.jpg" id="16_6k4g8"]
+[ext_resource type="Texture2D" uid="uid://dyos3xg1hbns2" path="res://Images/GUI/GUI_elements/empty_tile.png" id="18_8i7c7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0o7s"]
+size = Vector2(600, 600)
+
+[node name="Sliding_puzzle" type="Area2D"]
+script = ExtResource("1_b0k68")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -13.0
+offset_right = 1167.0
+offset_bottom = 666.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wdw5n")
+
+[node name="back_button" type="Button" parent="."]
+custom_minimum_size = Vector2(242, 0)
+offset_left = 120.0
+offset_top = 397.0
+offset_right = 362.0
+offset_bottom = 493.0
+theme_override_font_sizes/font_size = 64
+text = "Назад"
+
+[node name="restart_button" type="Button" parent="."]
+offset_left = 119.0
+offset_top = 202.0
+offset_right = 361.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 64
+text = "Заново"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(800, 325)
+shape = SubResource("RectangleShape2D_l0o7s")
+
+[node name="Tile1" type="Sprite2D" parent="."]
+position = Vector2(575, 100)
+texture = ExtResource("2_auv4r")
+
+[node name="Tile2" type="Sprite2D" parent="."]
+position = Vector2(725, 100)
+texture = ExtResource("3_osdf7")
+
+[node name="Tile3" type="Sprite2D" parent="."]
+position = Vector2(875, 100)
+texture = ExtResource("4_1fn66")
+
+[node name="Tile4" type="Sprite2D" parent="."]
+position = Vector2(1025, 100)
+texture = ExtResource("5_0fiou")
+
+[node name="Tile5" type="Sprite2D" parent="."]
+position = Vector2(575, 250)
+texture = ExtResource("6_eh1lh")
+
+[node name="Tile6" type="Sprite2D" parent="."]
+position = Vector2(725, 250)
+texture = ExtResource("7_xprwx")
+
+[node name="Tile7" type="Sprite2D" parent="."]
+position = Vector2(875, 250)
+texture = ExtResource("8_4g8ka")
+
+[node name="Tile8" type="Sprite2D" parent="."]
+position = Vector2(1025, 250)
+texture = ExtResource("9_bxqgy")
+
+[node name="Tile9" type="Sprite2D" parent="."]
+position = Vector2(575, 400)
+texture = ExtResource("10_q6m8d")
+
+[node name="Tile10" type="Sprite2D" parent="."]
+position = Vector2(725, 400)
+texture = ExtResource("11_wwrbl")
+
+[node name="Tile11" type="Sprite2D" parent="."]
+position = Vector2(875, 400)
+texture = ExtResource("12_12v4y")
+
+[node name="Tile12" type="Sprite2D" parent="."]
+position = Vector2(1025, 400)
+texture = ExtResource("13_roj80")
+
+[node name="Tile13" type="Sprite2D" parent="."]
+position = Vector2(575, 550)
+texture = ExtResource("14_ov1hf")
+
+[node name="Tile14" type="Sprite2D" parent="."]
+position = Vector2(725, 550)
+texture = ExtResource("15_ugc0g")
+
+[node name="Tile15" type="Sprite2D" parent="."]
+position = Vector2(875, 550)
+texture = ExtResource("16_6k4g8")
+
+[node name="Tile16" type="Sprite2D" parent="."]
+position = Vector2(1025, 550)
+texture = ExtResource("18_8i7c7")
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="restart_button" to="." method="_on_restart_button_pressed"]
